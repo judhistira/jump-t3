@@ -1,9 +1,9 @@
 import { EnvelopeView } from "~/modules/envelopes/ui/envelope-view";
-import { api, HydrateClient } from "~/trpc/server";
+import { HydrateClient, api } from "~/trpc/server";
 
 export const dynamic = "force-dynamic";
 
-export const EnvelopePage = () => {
+const EnvelopePage = () => {
   void api.envelope.getEnvelopes.prefetch();
   void api.envelope.getIncome.prefetch();
 
